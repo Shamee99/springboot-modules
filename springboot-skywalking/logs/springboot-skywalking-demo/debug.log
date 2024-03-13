@@ -1,0 +1,193 @@
+2023-11-06 22:34:45,090 [main] ERROR [org.springframework.boot.SpringApplication] SpringApplication.java:821 - Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Could not create component [layout] of type [org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout] java.lang.ClassNotFoundException: org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@51:26 - no applicable action for [Pattern], current ElementPath  is [[configuration][appender][encoder][layout][Pattern]]
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@56:112 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [grpc]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:344)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:301)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at org.example.Main.main(Main.java:9)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Could not create component [layout] of type [org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout] java.lang.ClassNotFoundException: org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@51:26 - no applicable action for [Pattern], current ElementPath  is [[configuration][appender][encoder][layout][Pattern]]
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@56:112 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [grpc]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reportConfigurationErrorsIfNecessary(LogbackLoggingSystem.java:189)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:170)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:329)
+	... 18 common frames omitted
+	Suppressed: java.lang.ClassNotFoundException: org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout
+		at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+		at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+		at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+		at ch.qos.logback.core.util.Loader.loadClass(Loader.java:120)
+		at ch.qos.logback.core.joran.action.NestedComplexPropertyIA.begin(NestedComplexPropertyIA.java:102)
+		at ch.qos.logback.core.joran.spi.Interpreter.callBeginAction(Interpreter.java:269)
+		at ch.qos.logback.core.joran.spi.Interpreter.startElement(Interpreter.java:145)
+		at ch.qos.logback.core.joran.spi.Interpreter.startElement(Interpreter.java:128)
+		at ch.qos.logback.core.joran.spi.EventPlayer.play(EventPlayer.java:50)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:165)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:152)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:110)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:53)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.configureByResourceUrl(LogbackLoggingSystem.java:199)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:165)
+		... 22 common frames omitted
+	Suppressed: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender
+		at ch.qos.logback.core.util.OptionHelper.instantiateByClassNameAndParameter(OptionHelper.java:68)
+		at ch.qos.logback.core.util.OptionHelper.instantiateByClassName(OptionHelper.java:44)
+		at ch.qos.logback.core.util.OptionHelper.instantiateByClassName(OptionHelper.java:33)
+		at ch.qos.logback.core.joran.action.AppenderAction.begin(AppenderAction.java:52)
+		at ch.qos.logback.core.joran.spi.Interpreter.callBeginAction(Interpreter.java:269)
+		at ch.qos.logback.core.joran.spi.Interpreter.startElement(Interpreter.java:145)
+		at ch.qos.logback.core.joran.spi.Interpreter.startElement(Interpreter.java:128)
+		at ch.qos.logback.core.joran.spi.EventPlayer.play(EventPlayer.java:50)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:165)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:152)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:110)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:53)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.configureByResourceUrl(LogbackLoggingSystem.java:199)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:165)
+		... 22 common frames omitted
+	Caused by: java.lang.ClassNotFoundException: org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender
+		at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+		at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+		at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+		at ch.qos.logback.core.util.OptionHelper.instantiateByClassNameAndParameter(OptionHelper.java:55)
+		... 35 common frames omitted
+	Suppressed: ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender
+		at ch.qos.logback.core.joran.action.AppenderAction.begin(AppenderAction.java:76)
+		at ch.qos.logback.core.joran.spi.Interpreter.callBeginAction(Interpreter.java:269)
+		at ch.qos.logback.core.joran.spi.Interpreter.startElement(Interpreter.java:145)
+		at ch.qos.logback.core.joran.spi.Interpreter.startElement(Interpreter.java:128)
+		at ch.qos.logback.core.joran.spi.EventPlayer.play(EventPlayer.java:50)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:165)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:152)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:110)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:53)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.configureByResourceUrl(LogbackLoggingSystem.java:199)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:165)
+		... 22 common frames omitted
+	Caused by: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender
+2023-11-06 22:35:32,103 [main] ERROR [org.springframework.boot.SpringApplication] SpringApplication.java:821 - Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Could not create component [layout] of type [org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout] java.lang.ClassNotFoundException: org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@51:26 - no applicable action for [Pattern], current ElementPath  is [[configuration][appender][encoder][layout][Pattern]]
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:344)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:301)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at org.example.Main.main(Main.java:9)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Could not create component [layout] of type [org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout] java.lang.ClassNotFoundException: org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@51:26 - no applicable action for [Pattern], current ElementPath  is [[configuration][appender][encoder][layout][Pattern]]
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reportConfigurationErrorsIfNecessary(LogbackLoggingSystem.java:189)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:170)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:329)
+	... 18 common frames omitted
+	Suppressed: java.lang.ClassNotFoundException: org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout
+		at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+		at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+		at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+		at ch.qos.logback.core.util.Loader.loadClass(Loader.java:120)
+		at ch.qos.logback.core.joran.action.NestedComplexPropertyIA.begin(NestedComplexPropertyIA.java:102)
+		at ch.qos.logback.core.joran.spi.Interpreter.callBeginAction(Interpreter.java:269)
+		at ch.qos.logback.core.joran.spi.Interpreter.startElement(Interpreter.java:145)
+		at ch.qos.logback.core.joran.spi.Interpreter.startElement(Interpreter.java:128)
+		at ch.qos.logback.core.joran.spi.EventPlayer.play(EventPlayer.java:50)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:165)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:152)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:110)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:53)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.configureByResourceUrl(LogbackLoggingSystem.java:199)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:165)
+		... 22 common frames omitted
+2023-11-06 22:36:24,840 [background-preinit] INFO  [org.hibernate.validator.internal.util.Version] Version.java:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-11-06 22:36:24,865 [main] INFO  [org.example.Main] StartupInfoLogger.java:55 - Starting Main using Java 17.0.2 on DESKTOP-TJR9VVC with PID 11452 (E:\idea_projects\springboot-skywalking\target\classes started by 79304 in E:\idea_projects\springboot-skywalking)
+2023-11-06 22:36:24,868 [main] INFO  [org.example.Main] SpringApplication.java:631 - No active profile set, falling back to 1 default profile: "default"
+2023-11-06 22:36:26,792 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:108 - Tomcat initialized with port(s): 8081 (http)
+2023-11-06 22:36:26,808 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Initializing ProtocolHandler ["http-nio-8081"]
+2023-11-06 22:36:26,812 [main] INFO  [org.apache.catalina.core.StandardService] DirectJDKLog.java:173 - Starting service [Tomcat]
+2023-11-06 22:36:26,813 [main] INFO  [org.apache.catalina.core.StandardEngine] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.79]
+2023-11-06 22:36:26,934 [main] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+2023-11-06 22:36:26,935 [main] INFO  [o.s.b.w.s.c.ServletWebServerApplicationContext] ServletWebServerApplicationContext.java:292 - Root WebApplicationContext: initialization completed in 1958 ms
+2023-11-06 22:36:27,655 [main] WARN  [c.b.dynamic.datasource.DynamicRoutingDataSource] DynamicRoutingDataSource.java:230 - dynamic-datasource initial loaded [0] datasource,Please add your primary datasource or check your configuration
+2023-11-06 22:36:27,786 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Starting ProtocolHandler ["http-nio-8081"]
+2023-11-06 22:36:27,839 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:220 - Tomcat started on port(s): 8081 (http) with context path ''
+2023-11-06 22:36:27,857 [main] INFO  [org.example.Main] StartupInfoLogger.java:61 - Started Main in 4.753 seconds (JVM running for 7.227)
+2023-11-06 22:38:00,465 [http-nio-8081-exec-1] INFO  [org.apache.tomcat.util.http.parser.Cookie] DirectJDKLog.java:173 - A cookie header was received [Hm_lvt_2e3d05c68929d9543eb2bb56b535b9b4=1674033288,1675143544,1675163652,1675219550;] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2023-11-06 22:38:00,480 [http-nio-8081-exec-1] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-06 22:38:00,481 [http-nio-8081-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:525 - Initializing Servlet 'dispatcherServlet'
+2023-11-06 22:38:00,481 [http-nio-8081-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet] FrameworkServlet.java:547 - Completed initialization in 0 ms
+2023-11-06 22:38:00,522 [http-nio-8081-exec-1] INFO  [org.example.controller.TestController] TestController.java:13 - http interface api test()......
+2023-11-06 22:38:01,035 [http-nio-8081-exec-2] INFO  [org.example.controller.TestController] TestController.java:13 - http interface api test()......
+2023-11-06 22:38:01,291 [http-nio-8081-exec-3] INFO  [org.example.controller.TestController] TestController.java:13 - http interface api test()......
+2023-11-06 22:38:01,502 [http-nio-8081-exec-4] INFO  [org.example.controller.TestController] TestController.java:13 - http interface api test()......
+2023-11-06 22:38:02,081 [http-nio-8081-exec-5] INFO  [org.example.controller.TestController] TestController.java:13 - http interface api test()......
+2023-11-06 22:38:02,601 [http-nio-8081-exec-6] INFO  [org.example.controller.TestController] TestController.java:13 - http interface api test()......
+2023-11-06 22:38:02,973 [http-nio-8081-exec-7] INFO  [org.example.controller.TestController] TestController.java:13 - http interface api test()......
+2023-11-06 22:38:03,271 [http-nio-8081-exec-8] INFO  [org.example.controller.TestController] TestController.java:13 - http interface api test()......
+2023-11-06 22:38:03,540 [http-nio-8081-exec-9] INFO  [org.example.controller.TestController] TestController.java:13 - http interface api test()......
+2023-11-06 22:38:03,790 [http-nio-8081-exec-10] INFO  [org.example.controller.TestController] TestController.java:13 - http interface api test()......
+2023-11-06 22:38:04,202 [http-nio-8081-exec-1] INFO  [org.example.controller.TestController] TestController.java:13 - http interface api test()......
+2023-11-06 22:38:04,561 [http-nio-8081-exec-2] INFO  [org.example.controller.TestController] TestController.java:13 - http interface api test()......
+2023-11-06 22:38:04,891 [http-nio-8081-exec-3] INFO  [org.example.controller.TestController] TestController.java:13 - http interface api test()......
+2023-11-06 22:38:05,268 [http-nio-8081-exec-4] INFO  [org.example.controller.TestController] TestController.java:13 - http interface api test()......
+2023-11-06 22:38:05,643 [http-nio-8081-exec-5] INFO  [org.example.controller.TestController] TestController.java:13 - http interface api test()......
+2023-11-06 22:38:06,118 [http-nio-8081-exec-6] INFO  [org.example.controller.TestController] TestController.java:13 - http interface api test()......
+2023-11-06 22:42:26,063 [SpringApplicationShutdownHook] INFO  [c.b.dynamic.datasource.DynamicRoutingDataSource] DynamicRoutingDataSource.java:205 - dynamic-datasource start closing ....
+2023-11-06 22:42:26,064 [SpringApplicationShutdownHook] INFO  [c.b.dynamic.datasource.DynamicRoutingDataSource] DynamicRoutingDataSource.java:209 - dynamic-datasource all closed success,bye
+2023-11-06 22:42:30,616 [background-preinit] INFO  [org.hibernate.validator.internal.util.Version] Version.java:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-11-06 22:42:30,654 [main] INFO  [org.example.Main] StartupInfoLogger.java:55 - Starting Main using Java 17.0.2 on DESKTOP-TJR9VVC with PID 19892 (E:\idea_projects\springboot-skywalking\target\classes started by 79304 in E:\idea_projects\springboot-skywalking)
+2023-11-06 22:42:30,655 [main] INFO  [org.example.Main] SpringApplication.java:631 - No active profile set, falling back to 1 default profile: "default"
+2023-11-06 22:42:32,793 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:108 - Tomcat initialized with port(s): 8081 (http)
+2023-11-06 22:42:32,803 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Initializing ProtocolHandler ["http-nio-8081"]
+2023-11-06 22:42:32,806 [main] INFO  [org.apache.catalina.core.StandardService] DirectJDKLog.java:173 - Starting service [Tomcat]
+2023-11-06 22:42:32,806 [main] INFO  [org.apache.catalina.core.StandardEngine] DirectJDKLog.java:173 - Starting Servlet engine: [Apache Tomcat/9.0.79]
+2023-11-06 22:42:32,940 [main] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring embedded WebApplicationContext
+2023-11-06 22:42:32,941 [main] INFO  [o.s.b.w.s.c.ServletWebServerApplicationContext] ServletWebServerApplicationContext.java:292 - Root WebApplicationContext: initialization completed in 2170 ms
+2023-11-06 22:42:33,666 [main] WARN  [c.b.dynamic.datasource.DynamicRoutingDataSource] DynamicRoutingDataSource.java:230 - dynamic-datasource initial loaded [0] datasource,Please add your primary datasource or check your configuration
+2023-11-06 22:42:33,773 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Starting ProtocolHandler ["http-nio-8081"]
+2023-11-06 22:42:33,811 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:220 - Tomcat started on port(s): 8081 (http) with context path ''
+2023-11-06 22:42:33,823 [main] INFO  [org.example.Main] StartupInfoLogger.java:61 - Started Main in 4.362 seconds (JVM running for 6.645)

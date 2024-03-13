@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    dynamic:
+      primary: primary
+      datasource:
+        primary:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://localhost:3306/flyway-demo?useUnicode=true&characterEncoding=utf8&useSSL=false
+          username: root
+          password: root
+  flyway:
+    # 是否开启flyway
+    enabled: true
+    encoding: utf-8
+    # 默认存放sql脚本目录，默认为db/migration
+    locations: classpath:db/migration
+    # sql脚本文件名前缀，默认大写V
+    sql-migration-prefix: V
+    # sql脚本文件名称的分隔符，默认2个下划线__
+    sql-migration-separator: __
+    # 迁移sql脚本文件名称的后缀
+    sql-migration-suffixes: .sql
+    # metadata 版本控制信息表 默认 flyway_schema_history
+    table: flyway_schema_history
+    # 指定 baseline 的版本号,默认值为 1, 低于该版本号的 SQL 文件, migrate 时会被忽略
+    baseline-version: 1

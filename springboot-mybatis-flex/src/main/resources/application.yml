@@ -1,0 +1,43 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: springboot-mybatis-flex
+  profiles:
+    active: dev
+  jackson:
+    # 不要全局限制，避免字段格式不一致
+    date-format: "yyyy-MM-dd HH:mm:ss"
+    locale: zh_CN
+    time-zone: GMT+8
+
+  # druid config
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      validation-query: SELECT 1
+      initial-size: 10
+      min-idle: 10
+      max-active: 20
+      min-evictable-idle-time-millis: 180000
+      test-on-borrow: false
+      test-while-idle: true
+      remove-abandoned: true
+      remove-abandoned-timeout-millis: 1800
+      log-abandoned: true
+      pool-prepared-statements: true
+      max-open-prepared-statements: 100
+      filter:
+        slf4j:
+          enabled: false
+      web-stat-filter:
+        enabled: false
+mybatis-flex:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: org.shamee.demo.entity
+
+
+
+
+

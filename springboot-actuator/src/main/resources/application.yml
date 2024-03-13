@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: springboot-actuator-demo
+  boot:
+    admin:
+      ui:
+        title: SPRING-BOOT-ADMIN监控系统
+      client:
+        url: http://localhost:8081/actuator
+
+
+server:
+  port: 8080
+
+
+management:
+  server:
+    port: 8081   # 指定了actuator服务端口
+  endpoints:
+    web:
+      exposure:
+        include: '*'    # 表示开启所有端点，如果指定具体多个端点，可以用,隔开。如health,info
+  endpoint:
+    health:
+      show-details: always
+resilience4j:
+  retry:
+    instances:
+      retry_demo:
+        max-attempts: 4     # 重试的上限次数
+        wait-duration: 1s   # 重试的间隔时间，配置为1s
+
+
+
+
+
+
