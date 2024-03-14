@@ -1,6 +1,5 @@
 package com.example.springbootrabbitmq.consumer;
 
-import com.example.springbootrabbitmq.config.ExchangeQueueConstant;
 import com.rabbitmq.client.Channel;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.Queue;
@@ -14,22 +13,21 @@ import java.io.IOException;
 public class PushMessageConsumer {
 
 
-    @RabbitListener(queuesToDeclare = @Queue(value = ExchangeQueueConstant.TEST_WORK_QUEUE))
+    /**
+     * basicAck：表示成功确认，使用此回执方法后，消息会被rabbitmq broker 删除。
+     * void basicAck(long deliveryTag, boolean multiple)
+     * deliveryTag：表示消息投递序号，每次消费消息或者消息重新投递后，deliveryTag都会增加。手动消息确认模式下，我们可以对指定deliveryTag的消息进行ack、nack、reject等操作。
+     * multiple：是否批量确认，值为 true 则会一次性 ack所有小于当前消息 deliveryTag 的消息。
+     * */
+    @RabbitListener(queuesToDeclare = @Queue(value = "my-queue"))
     @RabbitHandler
     public void testWork1(String msg, Channel channel, Message message) throws IOException {
         try {
-            System.out.println("小富收到消息：" + msg);
+            System.out.println("消费者收到消息：" + msg);
 
-            /**
-             * basicAck：表示成功确认，使用此回执方法后，消息会被rabbitmq broker 删除。
-             * void basicAck(long deliveryTag, boolean multiple)
-             * deliveryTag：表示消息投递序号，每次消费消息或者消息重新投递后，deliveryTag都会增加。手动消息确认模式下，我们可以对指定deliveryTag的消息进行ack、nack、reject等操作。
-             * multiple：是否批量确认，值为 true 则会一次性 ack所有小于当前消息 deliveryTag 的消息。
-             * */
             channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
-            System.out.println("22222222222__________" + message.getMessageProperties().getDeliveryTag());
-            System.out.println("3333333333__________" + message.getMessageProperties().getRedelivered());
-            //TODO 具体业务
+            System.out.println("deliveryTag：" + message.getMessageProperties().getDeliveryTag());
+            System.out.println("redelivered：" + message.getMessageProperties().getRedelivered());
         } catch (Exception e) {
             if (message.getMessageProperties().getRedelivered()) {
                 System.out.println("消息已重复处理失败,拒绝再次接收！");
