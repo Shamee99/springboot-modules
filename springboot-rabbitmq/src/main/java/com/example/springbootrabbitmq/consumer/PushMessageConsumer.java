@@ -21,7 +21,7 @@ public class PushMessageConsumer {
      * */
     @RabbitListener(queuesToDeclare = @Queue(value = "my-queue"))
     @RabbitHandler
-    public void testWork1(String msg, Channel channel, Message message) throws IOException {
+    public void consume(String msg, Channel channel, Message message) throws IOException {
         try {
             System.out.println("消费者收到消息：" + msg);
 
@@ -30,9 +30,9 @@ public class PushMessageConsumer {
             System.out.println("redelivered：" + message.getMessageProperties().getRedelivered());
         } catch (Exception e) {
             if (message.getMessageProperties().getRedelivered()) {
-                System.out.println("消息已重复处理失败,拒绝再次接收！");
-                // 拒绝消息，requeue=false 表示不再重新入队，如果配置了死信队列则进入死信队列
+                System.err.println("消息已重复处理失败,拒绝再次接收！");
                 /**
+                 * 拒绝消息，requeue=false 表示不再重新入队，如果配置了死信队列则进入死信队列
                  * basicReject：拒绝消息，与basicNack区别在于不能进行批量操作，其他用法很相似。
                  * deliveryTag：表示消息投递序号。
                  * requeue：值为 true 消息将重新入队列。
@@ -40,8 +40,8 @@ public class PushMessageConsumer {
                 channel.basicReject(message.getMessageProperties().getDeliveryTag(), false);
             } else {
                 System.out.println("消息即将再次返回队列处理！");
-                // requeue为是否重新回到队列，true重新入队
                 /**
+                 * requeue为是否重新回到队列，true重新入队
                  * deliveryTag：表示消息投递序号。
                  * multiple：是否批量确认。
                  * requeue：值为 true 消息将重新入队列。
