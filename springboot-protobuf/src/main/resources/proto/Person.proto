@@ -1,0 +1,18 @@
+syntax = "proto3";
+package proto.shamee;
+
+// 生成的文件存放在哪个包下
+option java_package = "proto.shamee";
+
+// 生成的类名，如果没有指定，会根据文件名自动转驼峰来命名
+option java_outer_classname = "PersonProto";
+
+// 定义了一个Person类
+message Person {
+    // 后面的值（=1  =2）作为序列化后的二进制编码中的字段的唯一标签
+    // 因此 1-15比 16 会少一个字节，所以尽量使用 1-15 来指定常用字段。
+    int32 id = 1;
+    string name = 2;
+    string email = 3;
+    string address = 4;
+}

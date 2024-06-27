@@ -1,0 +1,10 @@
+syntax = "proto3";
+package proto.shamee;
+option java_package = "proto.shamee";
+option java_outer_classname = "ResponseProto";
+
+message Response {
+    int32 code = 1;
+    string message = 2;
+    string data = 3;
+}
