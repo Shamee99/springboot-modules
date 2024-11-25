@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: springboot-redis
+  redis:
+    host: 127.0.0.1
+    password:
+    database: 1
+    client-type: LETTUCE
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: -1
+
+

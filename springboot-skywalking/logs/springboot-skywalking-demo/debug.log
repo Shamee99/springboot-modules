@@ -24,7 +24,7 @@ ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:301)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
-	at org.example.Main.main(Main.java:9)
+	at org.example.SpringbootFlywayApplication.main(Main.java:9)
 Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
 ERROR in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Could not create component [layout] of type [org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout] java.lang.ClassNotFoundException: org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout
 ERROR in ch.qos.logback.core.joran.spi.Interpreter@51:26 - no applicable action for [Pattern], current ElementPath  is [[configuration][appender][encoder][layout][Pattern]]
@@ -114,7 +114,7 @@ ERROR in ch.qos.logback.core.joran.spi.Interpreter@51:26 - no applicable action 
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:301)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
-	at org.example.Main.main(Main.java:9)
+	at org.example.SpringbootFlywayApplication.main(Main.java:9)
 Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
 ERROR in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Could not create component [layout] of type [org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout] java.lang.ClassNotFoundException: org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout
 ERROR in ch.qos.logback.core.joran.spi.Interpreter@51:26 - no applicable action for [Pattern], current ElementPath  is [[configuration][appender][encoder][layout][Pattern]]
@@ -143,8 +143,8 @@ ERROR in ch.qos.logback.core.joran.spi.Interpreter@51:26 - no applicable action 
 		at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:165)
 		... 22 common frames omitted
 2023-11-06 22:36:24,840 [background-preinit] INFO  [org.hibernate.validator.internal.util.Version] Version.java:21 - HV000001: Hibernate Validator 6.2.5.Final
-2023-11-06 22:36:24,865 [main] INFO  [org.example.Main] StartupInfoLogger.java:55 - Starting Main using Java 17.0.2 on DESKTOP-TJR9VVC with PID 11452 (E:\idea_projects\springboot-skywalking\target\classes started by 79304 in E:\idea_projects\springboot-skywalking)
-2023-11-06 22:36:24,868 [main] INFO  [org.example.Main] SpringApplication.java:631 - No active profile set, falling back to 1 default profile: "default"
+2023-11-06 22:36:24,865 [main] INFO  [org.example.SpringbootFlywayApplication] StartupInfoLogger.java:55 - Starting Main using Java 17.0.2 on DESKTOP-TJR9VVC with PID 11452 (E:\idea_projects\springboot-skywalking\target\classes started by 79304 in E:\idea_projects\springboot-skywalking)
+2023-11-06 22:36:24,868 [main] INFO  [org.example.SpringbootFlywayApplication] SpringApplication.java:631 - No active profile set, falling back to 1 default profile: "default"
 2023-11-06 22:36:26,792 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:108 - Tomcat initialized with port(s): 8081 (http)
 2023-11-06 22:36:26,808 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Initializing ProtocolHandler ["http-nio-8081"]
 2023-11-06 22:36:26,812 [main] INFO  [org.apache.catalina.core.StandardService] DirectJDKLog.java:173 - Starting service [Tomcat]
@@ -154,7 +154,7 @@ ERROR in ch.qos.logback.core.joran.spi.Interpreter@51:26 - no applicable action 
 2023-11-06 22:36:27,655 [main] WARN  [c.b.dynamic.datasource.DynamicRoutingDataSource] DynamicRoutingDataSource.java:230 - dynamic-datasource initial loaded [0] datasource,Please add your primary datasource or check your configuration
 2023-11-06 22:36:27,786 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Starting ProtocolHandler ["http-nio-8081"]
 2023-11-06 22:36:27,839 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:220 - Tomcat started on port(s): 8081 (http) with context path ''
-2023-11-06 22:36:27,857 [main] INFO  [org.example.Main] StartupInfoLogger.java:61 - Started Main in 4.753 seconds (JVM running for 7.227)
+2023-11-06 22:36:27,857 [main] INFO  [org.example.SpringbootFlywayApplication] StartupInfoLogger.java:61 - Started Main in 4.753 seconds (JVM running for 7.227)
 2023-11-06 22:38:00,465 [http-nio-8081-exec-1] INFO  [org.apache.tomcat.util.http.parser.Cookie] DirectJDKLog.java:173 - A cookie header was received [Hm_lvt_2e3d05c68929d9543eb2bb56b535b9b4=1674033288,1675143544,1675163652,1675219550;] that contained an invalid cookie. That cookie will be ignored.
  Note: further occurrences of this error will be logged at DEBUG level.
 2023-11-06 22:38:00,480 [http-nio-8081-exec-1] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] DirectJDKLog.java:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
@@ -179,8 +179,8 @@ ERROR in ch.qos.logback.core.joran.spi.Interpreter@51:26 - no applicable action 
 2023-11-06 22:42:26,063 [SpringApplicationShutdownHook] INFO  [c.b.dynamic.datasource.DynamicRoutingDataSource] DynamicRoutingDataSource.java:205 - dynamic-datasource start closing ....
 2023-11-06 22:42:26,064 [SpringApplicationShutdownHook] INFO  [c.b.dynamic.datasource.DynamicRoutingDataSource] DynamicRoutingDataSource.java:209 - dynamic-datasource all closed success,bye
 2023-11-06 22:42:30,616 [background-preinit] INFO  [org.hibernate.validator.internal.util.Version] Version.java:21 - HV000001: Hibernate Validator 6.2.5.Final
-2023-11-06 22:42:30,654 [main] INFO  [org.example.Main] StartupInfoLogger.java:55 - Starting Main using Java 17.0.2 on DESKTOP-TJR9VVC with PID 19892 (E:\idea_projects\springboot-skywalking\target\classes started by 79304 in E:\idea_projects\springboot-skywalking)
-2023-11-06 22:42:30,655 [main] INFO  [org.example.Main] SpringApplication.java:631 - No active profile set, falling back to 1 default profile: "default"
+2023-11-06 22:42:30,654 [main] INFO  [org.example.SpringbootFlywayApplication] StartupInfoLogger.java:55 - Starting Main using Java 17.0.2 on DESKTOP-TJR9VVC with PID 19892 (E:\idea_projects\springboot-skywalking\target\classes started by 79304 in E:\idea_projects\springboot-skywalking)
+2023-11-06 22:42:30,655 [main] INFO  [org.example.SpringbootFlywayApplication] SpringApplication.java:631 - No active profile set, falling back to 1 default profile: "default"
 2023-11-06 22:42:32,793 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:108 - Tomcat initialized with port(s): 8081 (http)
 2023-11-06 22:42:32,803 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Initializing ProtocolHandler ["http-nio-8081"]
 2023-11-06 22:42:32,806 [main] INFO  [org.apache.catalina.core.StandardService] DirectJDKLog.java:173 - Starting service [Tomcat]
@@ -190,4 +190,4 @@ ERROR in ch.qos.logback.core.joran.spi.Interpreter@51:26 - no applicable action 
 2023-11-06 22:42:33,666 [main] WARN  [c.b.dynamic.datasource.DynamicRoutingDataSource] DynamicRoutingDataSource.java:230 - dynamic-datasource initial loaded [0] datasource,Please add your primary datasource or check your configuration
 2023-11-06 22:42:33,773 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] DirectJDKLog.java:173 - Starting ProtocolHandler ["http-nio-8081"]
 2023-11-06 22:42:33,811 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] TomcatWebServer.java:220 - Tomcat started on port(s): 8081 (http) with context path ''
-2023-11-06 22:42:33,823 [main] INFO  [org.example.Main] StartupInfoLogger.java:61 - Started Main in 4.362 seconds (JVM running for 6.645)
+2023-11-06 22:42:33,823 [main] INFO  [org.example.SpringbootFlywayApplication] StartupInfoLogger.java:61 - Started Main in 4.362 seconds (JVM running for 6.645)
