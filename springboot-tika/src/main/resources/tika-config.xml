@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+    <encodingDetectors>
+        <!-- 检测 HTML 文件的字符编码，它会根据 HTML 元素（如 <meta> 标签）中的声明来判断编码。 -->
+        <encodingDetector class="org.apache.tika.parser.html.HtmlEncodingDetector">
+            <params>
+                <!-- 读取的最大字节数（这里是 64,000 字节）用于判断编码 -->
+                <param name="markLimit" type="int">64000</param>
+            </params>
+        </encodingDetector>
+        <!-- Tika 的通用编码检测器 -->
+        <encodingDetector class="org.apache.tika.parser.txt.UniversalEncodingDetector">
+            <params>
+                <param name="markLimit" type="int">64000</param>
+            </params>
+        </encodingDetector>
+        <!-- 基于 ICU4J 库的编码检测器。ICU4J 是一个强大的国际化库，能够更准确地检测多语言文本的编码。 -->
+        <encodingDetector class="org.apache.tika.parser.txt.Icu4jEncodingDetector">
+            <params>
+                <param name="markLimit" type="int">64000</param>
+            </params>
+        </encodingDetector>
+    </encodingDetectors>
+</properties>
